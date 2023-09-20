@@ -162,6 +162,7 @@
     <string name="deleting">Deleting</string>
     <string name="delete_selected_download">Delete the selected download? This operation cannot be undone</string>
     <string name="delete_selected_downloads">Delete the selected downloads? This operation cannot be undone</string>
+    <string name="delete_all_downloads">Delete all downloads? This operation cannot be undone</string>
     <string name="delete_with_downloaded_file">Delete with downloaded file</string>
     <string name="error_verify_checksum">Invalid file checksum</string>
     <!-- Filemanager dialog -->
@@ -247,6 +248,7 @@
     <string name="pref_theme_entries_0">Light</string>
     <string name="pref_theme_entries_1">Dark</string>
     <string name="pref_theme_entries_2">Black</string>
+    <string name="pref_theme_entries_3">Follow system</string>
     <string name="pref_notification_category">Notification settings</string>
     <string name="pref_progress_notify_title">Progress notification</string>
     <string name="pref_finish_notify_title">Finish notification</string>

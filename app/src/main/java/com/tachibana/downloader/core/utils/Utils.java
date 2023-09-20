@@ -41,6 +41,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
@@ -132,7 +133,14 @@ public class Utils {
             return R.style.AppTheme_Dark;
         else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_black_value)))
             return R.style.AppTheme_Black;
-
+        else if (theme == Integer.parseInt(appContext.getString(R.string.pref_theme_follow_os))) {
+            switch (appContext.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    return R.style.AppTheme_Dark;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    return R.style.AppTheme;
+            }
+        }
         return R.style.AppTheme;
     }
 

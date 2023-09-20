@@ -73,5 +73,5 @@ Download Navi is developed in good faith and for general use. The developer will
 
 ## Contact
 
-Contributions to this project are welcomed. Contributions, suggestions or bug reports and fixes can be made by opening an issue or creating pull requests. Read our contributor's guidelines [here](https://github.com/TachibanaGeneralLaboratories/download Navi/blob/master/CONTRIBUTING.md) to get started.
-If you have any questions about this Privacy Policy, or any other issue relating to the Download Navi project, please contact us [here](https://github.com/TachibanaGeneralLaboratories/download Navi) by opening an [issue](https://github.com/TachibanaGeneralLaboratories/download Navi/issues/new).
+Contributions to this project are welcomed. Contributions, suggestions or bug reports and fixes can be made by opening an issue or creating pull requests. Read our contributor's guidelines [here](https://github.com/Davilarek/download-Navi/blob/master/CONTRIBUTING.md) to get started.
+If you have any questions about this Privacy Policy, or any other issue relating to the Download Navi project, please contact us [here](https://github.com/TachibanaGeneralLaboratories/download-Navi) by opening an [issue](https://github.com/Davilarek/download-Navi/issues/new).

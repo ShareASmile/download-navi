@@ -37,6 +37,12 @@
         android:summary="@string/pref_auto_connect_summary"
         android:persistent="false" />
 
+    <SwitchPreferenceCompat
+        android:key="@string/pref_key_use_download_dialog"
+        android:title="Use add download dialog"
+        android:summary="Show add dialog"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:title="@string/pref_power_management_category">
 

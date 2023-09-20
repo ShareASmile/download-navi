@@ -147,6 +147,13 @@ public class BehaviorSettingsFragment extends PreferenceFragmentCompat
             bindOnPreferenceChangeListener(autoConnect);
         }
 
+        String keyUseDownloadDialog = getString(R.string.pref_key_use_download_dialog);
+        SwitchPreferenceCompat useDownloadDialog = findPreference(keyUseDownloadDialog);
+        if (useDownloadDialog != null) {
+            useDownloadDialog.setChecked(pref.useDownloadDialog());
+            bindOnPreferenceChangeListener(useDownloadDialog);
+        }
+
         String keyTimeout = getString(R.string.pref_key_timeout);
         EditTextPreference timeout = findPreference(keyTimeout);
         if (timeout != null) {
@@ -238,6 +245,9 @@ public class BehaviorSettingsFragment extends PreferenceFragmentCompat
 
         } else if(preference.getKey().equals(getString(R.string.pref_key_auto_connect))) {
             pref.autoConnect((boolean)newValue);
+
+        } else if(preference.getKey().equals(getString(R.string.pref_key_use_download_dialog))) {
+            pref.useDownloadDialog((boolean)newValue);
 
         } else if(preference.getKey().equals(getString(R.string.pref_key_timeout))) {
             int value = 0;

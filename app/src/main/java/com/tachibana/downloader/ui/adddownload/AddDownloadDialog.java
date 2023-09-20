@@ -44,6 +44,7 @@ import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -74,6 +75,7 @@ import com.tachibana.downloader.ui.ClipboardDialog;
 import com.tachibana.downloader.ui.FragmentCallback;
 import com.tachibana.downloader.ui.PermissionDeniedDialog;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
@@ -109,6 +111,7 @@ public class AddDownloadDialog extends DialogFragment {
     private String curClipboardTag;
     private SharedPreferences localPref;
     private PermissionDeniedDialog permDeniedDialog;
+    private TextView warningFileExist;
 
     public static AddDownloadDialog newInstance(@NonNull AddInitParams initParams)
     {
@@ -452,13 +455,23 @@ public class AddDownloadDialog extends DialogFragment {
                 binding.layoutLink.setError(null);
             }
         });
+        warningFileExist = binding.fileExists;
         binding.name.addTextChangedListener(new TextWatcher()
         {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                File file = new File(viewModel.params.getDirName() + "/" + s.toString());
+                if (!file.exists()) {
+//                    warningFileExist.setEnabled(false);
+                    warningFileExist.setVisibility(View.GONE);
+                    return;
+                }
+//                warningFileExist.setEnabled(true);
+                warningFileExist.setVisibility(View.VISIBLE);
+            }
 
             @Override
             public void afterTextChanged(Editable s)
@@ -467,10 +480,33 @@ public class AddDownloadDialog extends DialogFragment {
                 binding.layoutName.setError(null);
             }
         });
+
+        binding.savePath.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                File file = new File(s.toString() + "/" + viewModel.params.getFileName());
+                if (!file.exists()) {
+                    warningFileExist.setVisibility(View.GONE);
+                    return;
+                }
+                warningFileExist.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+            }
+        });
+
         binding.checksum.addTextChangedListener(new TextWatcher()
         {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}

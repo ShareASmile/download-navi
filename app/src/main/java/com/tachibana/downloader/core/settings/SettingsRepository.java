@@ -118,6 +118,10 @@ public interface SettingsRepository
 
     void autoConnect(boolean val);
 
+    boolean useDownloadDialog();
+
+    void useDownloadDialog(boolean val);
+
     String userAgent();
 
     void userAgent(String val);

@@ -73,6 +73,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final int timeout = HttpConnection.DEFAULT_TIMEOUT;
         static final boolean replaceDuplicateDownloads = true;
         static final boolean autoConnect = true;
+        static final boolean useDownloadDialog = true;
         static String userAgent(@NonNull Context context)
         {
             String userAgent = SystemFacadeHelper.getSystemFacade(context).getSystemUserAgent();
@@ -478,6 +479,21 @@ public class SettingsRepositoryImpl implements SettingsRepository
     {
         pref.edit()
                 .putBoolean(appContext.getString(R.string.pref_key_auto_connect), val)
+                .apply();
+    }
+
+    @Override
+    public boolean useDownloadDialog()
+    {
+        return pref.getBoolean(appContext.getString(R.string.pref_key_use_download_dialog),
+                Default.useDownloadDialog);
+    }
+
+    @Override
+    public void useDownloadDialog(boolean val)
+    {
+        pref.edit()
+                .putBoolean(appContext.getString(R.string.pref_key_use_download_dialog), val)
                 .apply();
     }
 

@@ -372,7 +372,7 @@ public class DownloadUtils {
         return stream.toByteArray();
     }
 
-    private static String autoDecodePercentEncoding(String field) throws NumberFormatException {
+    public static String autoDecodePercentEncoding(String field) throws NumberFormatException {
         String encoding;
         UniversalDetector detector = new UniversalDetector();
         byte[] bytes = percentEncodingBytes(field);

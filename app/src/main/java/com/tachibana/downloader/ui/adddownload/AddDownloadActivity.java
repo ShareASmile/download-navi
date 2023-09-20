@@ -33,12 +33,14 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.tachibana.downloader.R;
 import com.tachibana.downloader.core.RepositoryHelper;
+import com.tachibana.downloader.core.model.DownloadEngine;
 import com.tachibana.downloader.core.model.data.entity.DownloadInfo;
 import com.tachibana.downloader.core.settings.SettingsRepository;
 import com.tachibana.downloader.core.utils.Utils;
 import com.tachibana.downloader.ui.BaseAlertDialog;
 import com.tachibana.downloader.ui.BatteryOptimizationDialog;
 import com.tachibana.downloader.ui.FragmentCallback;
+import com.tachibana.downloader.ui.main.MainActivity;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -76,6 +78,12 @@ public class AddDownloadActivity extends AppCompatActivity
                 initParams = i.getParcelableExtra(TAG_INIT_PARAMS);
             if (initParams == null) {
                 initParams = new AddInitParams();
+            }
+            SettingsRepository pref = RepositoryHelper.getSettingsRepository(getApplicationContext());
+            if (!pref.useDownloadDialog()) {
+                MainActivity.justAddTheDamnDownload( getUrlFromIntent(), Uri.parse(pref.saveDownloadsIn()), null, pref, this, DownloadEngine.getInstance(getApplicationContext()));
+                finish();
+                return;
             }
             fillInitParams(initParams);
             addDownloadDialog = AddDownloadDialog.newInstance(initParams);

@@ -28,8 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/download_list_tabs"
-            android:nextFocusDown="@id/add_fab"
-            android:background="?attr/background" />
+            android:background="?attr/background"
+            android:nextFocusDown="@id/add_fab" />
+
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -41,4 +42,14 @@
         app:srcCompat="@drawable/ic_add_black_24dp"
         android:focusable="true"
         android:contentDescription="@string/add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/purge_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="Clear"
+        android:focusable="true"
+        app:srcCompat="@drawable/ic_clear_grey600_24dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

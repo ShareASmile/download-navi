@@ -88,6 +88,16 @@
                     android:text="@={viewModel.params.fileName}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/fileExists"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/partial_support_warning_img"
+                android:layout_centerInParent="true"
+                android:textColor="?attr/colorWarning"
+                android:text="File with that name already exists"
+                android:visibility="gone" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -42,6 +42,7 @@
     <string name="pref_key_enable_roaming" translatable="false">pref_key_enable_roaming</string>
     <string name="pref_key_replace_duplicate_downloads" translatable="false">pref_key_replace_duplicate_downloads</string>
     <string name="pref_key_auto_connect" translatable="false">pref_key_auto_connect</string>
+    <string name="pref_key_use_download_dialog" translatable="false">pref_key_use_download_dialog</string>
     <string name="pref_key_timeout" translatable="false">pref_key_timeout</string>
     <!-- Limitation settings -->
     <string name="pref_key_max_active_downloads" translatable="false">pref_key_max_active_downloads</string>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <data>-->
+<!--        <import type="android.view.View" />-->
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.tachibana.downloader.ui.adddownload.AddDownloadViewModel" />-->
+<!--    </data>-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dialog_padding"
+        android:paddingBottom="8dp"
+        android:paddingEnd="@dimen/dialog_padding"
+        android:paddingStart="@dimen/dialog_padding"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay"> <!-- Need for padding -->
+
+        <LinearLayout
+            android:id="@+id/exportDownloadsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="@dimen/min_width_dialog"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/downloadNoHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/partial_support_warning_img"
+                android:layout_centerInParent="true"
+                android:textColor="?attr/colorWarning"
+                android:text="No DownloadNavi header has been detected in this file. Trying to use it anyway..."
+                android:visibility="gone"/>
+        </LinearLayout>>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
