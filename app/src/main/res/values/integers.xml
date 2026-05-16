@@ -13,6 +13,7 @@
     <integer name="drawer_category_apk_id">5</integer>
     <integer name="drawer_category_audio_id">6</integer>
     <integer name="drawer_category_archives_id">7</integer>
+    <integer name="drawer_category_open_files">8</integer>
     <!-- Status -->
     <integer name="drawer_status_id">1</integer>
     <integer name="drawer_status_all_id">0</integer>

@@ -8,6 +8,12 @@
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
+    <item
+        android:id="@+id/action_open_files"
+        android:title="@string/drawer_category_open"
+        android:icon="@drawable/ic_file_grey600_24dp"
+        app:showAsAction="ifRoom|withText" />
+
     <item android:id="@+id/browser_menu"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_earth_menu_24dp"

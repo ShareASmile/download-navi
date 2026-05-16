@@ -30,6 +30,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.DocumentsContract;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
@@ -503,6 +504,12 @@ public class MainActivity extends AppCompatActivity
             pauseAll();
         } else if (itemId == R.id.resume_all_menu) {
             resumeAll();
+        } else if (itemId == R.id.action_open_files) {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
+            Uri initial = Uri.parse("content://com.android.externalstorage.documents/document/primary:Download");
+            intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, initial);
+            startActivity(intent);
+            return true;
         } else if (itemId == R.id.settings_menu) {
             startActivity(new Intent(this, SettingsActivity.class));
         } else if (itemId == R.id.about_menu) {

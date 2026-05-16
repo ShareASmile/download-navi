@@ -133,6 +133,7 @@
     <string name="drawer_category_apk">APK</string>
     <string name="drawer_category_audio">Audio</string>
     <string name="drawer_category_archives">Archives</string>
+    <string name="drawer_category_open">Open Files</string>
     <!-- Status -->
     <string name="drawer_status">Status</string>
     <string name="drawer_status_running">Running</string>
